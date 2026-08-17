@@ -60,37 +60,72 @@
         }
 
         .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(
-                rgba(4,15,27,0.88),
-                rgba(4,15,27,0.88)
-            );
-            color: white;
-        }
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(217,164,65,0.18), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(40,120,255,0.12), transparent 30%),
+        #050b14;
+    color: white;
+}
 
-        .hero-content {
-            max-width: 800px;
-        }
+.hero-content {
+    max-width: 1000px;
+    width: 100%;
+}
 
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
-        }
+.hero h1 {
+    font-size: clamp(48px, 8vw, 86px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
 
-        .hero h1 span {
-            color: #d9a441;
-        }
+.hero h1 span {
+    color: #d9a441;
+}
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
+.hero p {
+    max-width: 700px;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #c9d2dc;
+    margin-bottom: 35px;
+}
+        .hero-label {
+    color: #d9a441;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
 
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-outline-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid #d9a441;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.hero-outline-btn:hover {
+    background: #d9a441;
+    color: #071a2d;
+}
         .btn {
             display: inline-block;
             padding: 14px 28px;
@@ -227,16 +262,30 @@
 
     <div class="hero-content">
 
-        <h1>I'm <span>Bankz</span></h1>
+        <p class="hero-label">AVAILABLE FOR PROJECTS</p>
+
+        <h1>
+            I Build <span>Websites</span><br>
+            That Work.
+        </h1>
 
         <p>
-            Web Designer & Developer creating modern,
-            responsive and professional websites for businesses.
+            I'm Bankz, a Web Designer & Developer creating
+            modern, responsive and professional websites
+            that help businesses grow online.
         </p>
 
-        <a href="#projects" class="btn">
-            View My Work
-        </a>
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn">
+                View My Work
+            </a>
+
+            <a href="#contact" class="hero-outline-btn">
+                Let's Work Together
+            </a>
+
+        </div>
 
     </div>
 
