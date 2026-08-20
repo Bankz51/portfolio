@@ -157,12 +157,16 @@
             font-size: 18px;
         }
 
-        .card {
-    width: 300px;
+      .card {
+    width: 100%;
+    min-height: 240px;
     padding: 30px 25px;
     background: white;
-    border-radius: 15px;
+    border-radius: 18px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 
     animation: floatingCard 4s ease-in-out infinite;
@@ -252,6 +256,9 @@
             .section-title {
                 font-size: 30px;
             }
+            .cards {
+    grid-template-columns: 1fr;
+}
         }
     </style>
 </head>
