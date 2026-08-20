@@ -157,9 +157,17 @@
             font-size: 18px;
         }
 
-      .card {
+     .cards {
+    max-width: 750px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card {
     width: 100%;
-    min-height: 240px;
+    min-height: 230px;
     padding: 30px 25px;
     background: white;
     border-radius: 18px;
@@ -172,12 +180,18 @@
     animation: floatingCard 4s ease-in-out infinite;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-        .cards {
-    max-width: 750px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+
+/* Make the cards float at slightly different times */
+.card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 1.8s;
 }
 
 .card:hover {
@@ -185,6 +199,15 @@
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
+@keyframes floatingCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
 @keyframes floatingCard {
     0%, 100% {
         transform: translateY(0);
