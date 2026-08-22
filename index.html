@@ -7,6 +7,92 @@
     <title>Bankz | Web Designer & Developer</title>
 
     <style>
+        .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 6%;
+    background: linear-gradient(
+        90deg,
+        #000000 0%,
+        #000000 35%,
+        #071a2d 100%
+    );
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d6a62a;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 14px 5%;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 5%;
+        width: 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 15px;
+        background: #071a2d;
+        border: 1px solid #d6a62a;
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 12px 10px;
+    }
+}
       .hero-outline-btn {
     display: inline-block;
     padding: 14px 28px;
@@ -97,6 +183,24 @@ nav {
         #071a2d 100%
     );
 }
+
+        <header class="nav">
+
+    <a href="#home" class="logo">
+        <img src="Logo1.png" alt="Bankz Logo">
+    </a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
         .logo {
             font-size: 24px;
             font-weight: bold;
@@ -509,6 +613,10 @@ nav {
     </p>
 
 </footer>
-
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 </body>
 </html>
