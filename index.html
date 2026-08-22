@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,211 +8,11 @@
     <title>Bankz | Web Designer & Developer</title>
 
     <style>
-       /* =========================
-   NAVIGATION HEADER
-========================= */
 
-.navbar {
-    width: 100%;
-    min-height: 72px;
-    padding: 0 6%;
-    box-sizing: border-box;
+        /* =========================
+           RESET
+        ========================= */
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: linear-gradient(
-        90deg,
-        #000000 0%,
-        #000000 35%,
-        #071a2d 100%
-    );
-
-    position: relative;
-    z-index: 1000;
-}
-
-/* LOGO */
-
-.logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.logo img {
-    height: 48px;
-    width: auto;
-    display: block;
-}
-
-/* NAVIGATION LINKS */
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 30px;
-    margin-left: auto;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #d6a62a;
-}
-
-/* MENU BUTTON */
-
-.menu-toggle {
-    display: none;
-}
-
-
-/* =========================
-   PHONE
-========================= */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        min-height: 68px;
-        padding: 0 18px;
-    }
-
-    .logo img {
-        height: 42px;
-    }
-
-    /* Show hamburger */
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        margin-left: auto;
-        padding: 6px;
-
-        background: transparent;
-        border: none;
-
-        color: #ffffff;
-        font-size: 28px;
-        line-height: 1;
-
-        cursor: pointer;
-    }
-
-    /* Hide links until toggle is clicked */
-    .nav-links {
-        display: none;
-
-        position: absolute;
-        top: 68px;
-        right: 18px;
-
-        width: 210px;
-
-        margin: 0;
-        padding: 8px 0;
-
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-
-        background: #071a2d;
-        border: 1px solid #d6a62a;
-        border-radius: 8px;
-
-        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 13px 18px;
-        box-sizing: border-box;
-    }
-}
-      .hero-outline-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background: #d6a62a !important;
-    color: #071a2d !important;
-    border: 2px solid #d6a62a;
-    border-radius: 6px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.hero-outline-btn:hover {
-    background: #f0c84b !important;
-    color: #071a2d !important;
-    transform: translateY(-2px);
-    box-shadow: 0 0 18px rgba(214, 166, 42, 0.45);
-}
-        .hero-content {
-    max-width: 750px;
-    padding: 40px 20px;
-}
-
-.hero-label {
-    margin-bottom: 18px;
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    color: #d6a62a;
-}
-
-.hero h1 {
-    margin: 0 0 22px;
-    font-size: clamp(42px, 6vw, 72px);
-    line-height: 1.05;
-    font-weight: 800;
-    color: #ffffff;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
-}
-
-.hero h1 span {
-    color: #d6a62a;
-}
-
-.hero-description {
-    max-width: 650px;
-    margin-bottom: 32px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #f5f5f5;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.hero-description strong {
-    color: #ffffff;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-        .logo img {
-    height: 50px;
-    width: auto;
-    display: block;
-}
         * {
             margin: 0;
             padding: 0;
@@ -226,106 +27,243 @@
             line-height: 1.6;
         }
 
-       header,
-nav {
-    background: linear-gradient(
-        90deg,
-        #000000 0%,
-        #000000 35%,
-        #071a2d 100%
-    );
-}
 
-        <header class="nav">
+        /* =========================
+           HEADER / NAVIGATION
+        ========================= */
 
-    <a href="#home" class="logo">
-        <img src="Logo1.png" alt="Bankz Logo">
-    </a>
-
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-    <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-</header>
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
+        header {
+            width: 100%;
+            position: relative;
+            z-index: 1000;
         }
+
+        nav {
+            width: 100%;
+            min-height: 72px;
+            padding: 0 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: linear-gradient(
+                90deg,
+                #000000 0%,
+                #000000 35%,
+                #071a2d 100%
+            );
+        }
+
+
+        /* LOGO */
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        nav .logo img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+
+
+        /* NAVIGATION LINKS */
 
         nav ul {
             list-style: none;
+
             display: flex;
-            gap: 25px;
+            align-items: center;
+            justify-content: flex-end;
+
+            gap: 30px;
+            margin-left: auto;
         }
 
-        nav a {
-            color: white;
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: #d9a441;
+        nav ul li a:hover {
+            color: #d6a62a;
         }
+
+
+        /* MENU TOGGLE */
+
+        .menu-toggle {
+            display: none;
+
+            background: transparent;
+            border: none;
+
+            color: #ffffff;
+
+            font-size: 28px;
+            line-height: 1;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+            min-height: 100vh;
 
-    background: linear-gradient(
-        110deg,
-        #071a2d 0%,
-        #071a2d 40%,
-        #16243a 55%,
-        #6f5a20 75%,
-        #d6a62a 100%
-    );
-}
+            display: flex;
+            align-items: center;
 
-.hero-content {
-    color: #ffffff;
-}
+            position: relative;
+            overflow: hidden;
 
-.hero-content h1 {
-    color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-}
+            background: linear-gradient(
+                110deg,
+                #071a2d 0%,
+                #071a2d 40%,
+                #16243a 55%,
+                #6f5a20 75%,
+                #d6a62a 100%
+            );
+        }
 
-.hero-content h1 span {
-    color: #d6a62a;
-}
+        .hero-content {
+            max-width: 750px;
+            padding: 40px 20px;
+            margin-left: 6%;
 
-.hero-content > p {
-    color: #f5f5f5;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-}
+            color: #ffffff;
+        }
 
-.hero-label {
-    color: #d6a62a;
-    font-weight: 600;
-}
+        .hero-label {
+            margin-bottom: 18px;
+
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 700;
+
+            color: #d6a62a;
+        }
+
+        .hero h1 {
+            margin: 0 0 22px;
+
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            font-weight: 800;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero h1 span {
+            color: #d6a62a;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin-bottom: 32px;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            color: #f5f5f5;
+
+            text-shadow:
+                0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-description strong {
+            color: #ffffff;
+        }
+
+
+        /* HERO BUTTONS */
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
+
             padding: 14px 28px;
+
             background: #d9a441;
             color: #071a2d;
+
             text-decoration: none;
             font-weight: bold;
+
             border-radius: 8px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease;
         }
 
         .btn:hover {
+            background: #f0c84b;
             transform: translateY(-2px);
         }
+
+
+        /* LET'S WORK TOGETHER BUTTON */
+
+        .hero-outline-btn {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            background: #d6a62a;
+            color: #071a2d;
+
+            border: 2px solid #d6a62a;
+            border-radius: 8px;
+
+            font-weight: 700;
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+        }
+
+        .hero-outline-btn:hover {
+            background: #f0c84b;
+            color: #071a2d;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 18px rgba(214, 166, 42, 0.45);
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         section {
             padding: 70px 20px;
@@ -333,109 +271,158 @@ nav {
 
         .section-title {
             text-align: center;
+
             font-size: 36px;
+
             margin-bottom: 40px;
         }
 
+
+        /* =========================
+           ABOUT
+        ========================= */
+
         .about {
             max-width: 850px;
+
             margin: auto;
+
             text-align: center;
+
             font-size: 18px;
         }
 
-     .cards {
-    max-width: 750px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
 
-.card {
-    width: 100%;
-    min-height: 230px;
-    padding: 30px 25px;
-    background: white;
-    border-radius: 18px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        /* =========================
+           SERVICE CARDS
+        ========================= */
 
-    animation: floatingCard 4s ease-in-out infinite;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .cards {
+            max-width: 750px;
 
-/* Make the cards float at slightly different times */
-.card:nth-child(2) {
-    animation-delay: 0.6s;
-}
+            margin: 0 auto;
 
-.card:nth-child(3) {
-    animation-delay: 1.2s;
-}
+            display: grid;
 
-.card:nth-child(4) {
-    animation-delay: 1.8s;
-}
+            grid-template-columns:
+                repeat(2, 1fr);
 
-.card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
+            gap: 25px;
+        }
 
-@keyframes floatingCard {
-    0%, 100% {
-        transform: translateY(0);
-    }
+        .card {
+            width: 100%;
+            min-height: 230px;
 
-    50% {
-        transform: translateY(-8px);
-    }
-}
-@keyframes floatingCard {
-    0%, 100% {
-        transform: translateY(0);
-    }
+            padding: 30px 25px;
 
-    50% {
-        transform: translateY(-8px);
-    }
-}
+            background: white;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+
+            animation:
+                floatingCard 4s ease-in-out infinite;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 1.2s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 1.8s;
+        }
+
+        .card:hover {
+            transform:
+                translateY(-10px) scale(1.02);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes floatingCard {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+
+        /* =========================
+           PROJECT
+        ========================= */
+
         .project {
-    max-width: 850px;
-    margin: auto;
-    padding: 60px 40px;
-    border-radius: 20px;
-    text-align: center;
-    color: white;
+            max-width: 850px;
 
-    background:
-        linear-gradient(
-            rgba(4, 15, 27, 0.78),
-            rgba(4, 15, 27, 0.78)
-        ),
-        url("apartment1.jpg") center/cover no-repeat;
+            margin: auto;
 
-    box-shadow: 0 10px 35px rgba(0,0,0,0.18);
-}
+            padding: 60px 40px;
 
-.project h3 {
-    font-size: 30px;
-    margin-bottom: 18px;
-    color: white;
-}
+            border-radius: 20px;
 
-.project p {
-    margin-bottom: 20px;
-    color: #f1f1f1;
-}
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(4, 15, 27, 0.78),
+                    rgba(4, 15, 27, 0.78)
+                ),
+                url("apartment1.jpg")
+                center / cover no-repeat;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .project h3 {
+            font-size: 30px;
+
+            margin-bottom: 18px;
+
+            color: white;
+        }
+
+        .project p {
+            margin-bottom: 20px;
+
+            color: #f1f1f1;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
             text-align: center;
+
             background: #071a2d;
+
             color: white;
         }
 
@@ -443,232 +430,651 @@ nav {
             margin-bottom: 25px;
         }
 
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             background: #040f1b;
+
             color: white;
+
             text-align: center;
+
             padding: 25px 20px;
         }
 
-        @media (max-width: 700px) {
+
+        /* =========================
+           MOBILE / PHONE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            /* HEADER */
 
             nav {
-                flex-direction: column;
-                gap: 12px;
+                min-height: 68px;
+
+                padding:
+                    0 18px;
             }
 
+            nav .logo img {
+                height: 42px;
+            }
+
+
+            /* HAMBURGER */
+
+            .menu-toggle {
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+
+                margin-left: auto;
+
+                padding: 5px;
+
+                background: transparent;
+                border: none;
+
+                color: #ffffff;
+
+                font-size: 28px;
+
+                cursor: pointer;
+            }
+
+
+            /* HIDE NAVIGATION */
+
             nav ul {
-                gap: 15px;
-                font-size: 14px;
+                display: none;
+
+                position: absolute;
+
+                top: 68px;
+                right: 18px;
+
+                width: 210px;
+
+                margin: 0;
+                padding: 8px 0;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                background: #071a2d;
+
+                border:
+                    1px solid #d6a62a;
+
+                border-radius: 8px;
+
+                box-shadow:
+                    0 8px 25px
+                    rgba(0, 0, 0, 0.4);
+            }
+
+
+            /* SHOW NAVIGATION */
+
+            nav ul.active {
+                display: flex;
+            }
+
+
+            /* MOBILE LINKS */
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li a {
+                display: block;
+
+                width: 100%;
+
+                padding:
+                    13px 18px;
+
+                box-sizing: border-box;
+
+                color: #ffffff;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero-content {
+                max-width: 100%;
+
+                margin-left: 0;
+
+                padding:
+                    60px 20px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 40px;
+
+                line-height: 1.1;
             }
 
-            .hero p {
+            .hero-description {
                 font-size: 17px;
+
+                line-height: 1.6;
             }
+
+            .hero-buttons {
+                gap: 12px;
+            }
+
+            .btn,
+            .hero-outline-btn {
+                padding:
+                    13px 20px;
+            }
+
+
+            /* SECTION TITLES */
 
             .section-title {
                 font-size: 30px;
             }
+
+
+            /* SERVICE CARDS */
+
             .cards {
-    grid-template-columns: 1fr;
-}
+                grid-template-columns: 1fr;
+            }
         }
+
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            nav {
+                padding:
+                    0 15px;
+            }
+
+            nav .logo img {
+                height: 38px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-label {
+                font-size: 12px;
+
+                letter-spacing: 1.5px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .btn,
+            .hero-outline-btn {
+                text-align: center;
+
+                width: 100%;
+            }
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <nav>
-       <a href="#home" class="logo">
-    <img src="logo1.png" alt="Bankz Logo">
-</a>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-<section class="hero" id="home">
+    <header>
 
-    <div class="hero-content">
+        <nav>
 
-        <p class="hero-label">AVAILABLE FOR PROJECTS</p>
+            <!-- LOGO -->
 
-        <h1>
-            I Build <span>Websites</span><br>
-            That Grow Businesses.
-        </h1>
+            <a href="#home" class="logo">
+                <img
+                    src="logo1.png"
+                    alt="Bankz Logo">
+            </a>
 
-        <p class="hero-description">
-            I'm <strong>Osanyintuyi Ayomide (Bankz)</strong>, a Web Designer & Developer
-            creating modern, responsive, and professional websites that help businesses
-            build a strong online presence and grow.
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="menu-toggle"
+                onclick="toggleMenu()"
+                aria-label="Open navigation menu">
+
+                ☰
+
+            </button>
+
+
+            <!-- NAVIGATION LINKS -->
+
+            <ul id="navLinks">
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section
+        class="hero"
+        id="home">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                AVAILABLE FOR PROJECTS
+            </p>
+
+
+            <h1>
+                I Build
+                <span>Websites</span>
+                <br>
+                That Grow Businesses.
+            </h1>
+
+
+            <p class="hero-description">
+
+                I'm
+                <strong>
+                    Osanyintuyi Ayomide (Bankz)
+                </strong>,
+
+                a Web Designer & Developer creating
+                modern, responsive, and professional
+                websites that help businesses build
+                a strong online presence and grow.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="btn">
+
+                    View My Work
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="hero-outline-btn">
+
+                    Let's Work Together
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+
+        <div class="about">
+
+            <p>
+
+                I'm a Web Designer & Developer
+                focused on creating modern,
+                responsive and professional
+                websites for businesses
+                and individuals.
+
+            </p>
+
+
+            <p style="margin-top: 15px;">
+
+                I build websites that are easy
+                to use, work smoothly across
+                phones and computers, and help
+                businesses establish a strong
+                online presence, connect with
+                customers and grow.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section id="services">
+
+        <h2 class="section-title">
+            My Services
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <h3>
+                    🎨 Website Design
+                </h3>
+
+                <p>
+
+                    Modern, clean and professional
+                    website designs tailored to your
+                    brand and business goals.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    💻 Website Development
+                </h3>
+
+                <p>
+
+                    Fast, responsive and functional
+                    websites that work smoothly across
+                    phones, tablets and computers.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    🔧 Website Maintenance & Support
+                </h3>
+
+                <p>
+
+                    Website updates, content changes,
+                    improvements and ongoing technical
+                    support to keep your website
+                    running smoothly.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    📢 Digital Promotion
+                </h3>
+
+                <p>
+
+                    Help businesses promote their
+                    products and services online
+                    through engaging digital content
+                    and advertising.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Featured Project
+        </h2>
+
+
+        <div class="project">
+
+            <h3>
+                🏠 OgaSavo Comfort Apartments
+            </h3>
+
+
+            <p>
+
+                A modern, responsive website designed
+                and developed for OgaSavo Comfort
+                Apartments to showcase the property,
+                provide essential information and make
+                booking easier for potential guests.
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Key Features:
+                </strong>
+
+                Online booking form,
+                WhatsApp booking integration,
+                guest reviews, Supabase database
+                integration, property gallery,
+                interactive photo viewer,
+                light/dark mode and responsive design.
+
+            </p>
+
+
+            <a
+                href="https://bankz51.github.io/OgaSavo-comfort-apartments/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn">
+
+                View Live Website
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+        class="contact"
+        id="contact">
+
+        <h2 class="section-title">
+            Let's Build Something Great
+        </h2>
+
+
+        <p>
+
+            Have a business that needs
+            a professional website?
+
+            I'm available for website design
+            and development projects.
+
         </p>
 
-        <div class="hero-buttons">
 
-            <a href="#projects" class="btn">
-                View My Work
-            </a>
+        <p>
 
-            <a href="#contact" class="hero-outline-btn">
-                Let's Work Together
-            </a>
+            Let's discuss your idea and turn
+            it into a website that works
+            for your business.
 
-    </div>
+        </p>
 
-</section>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="about">
-
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about">
-
-       <p>
-    I'm a Web Designer & Developer focused on creating
-    modern, responsive and professional websites for
-    businesses and individuals.
-</p>
-
-<p style="margin-top: 15px;">
-    I build websites that are easy to use, work smoothly
-    across phones and computers, and help businesses
-    establish a strong online presence, connect with
-    customers and grow.
-</p>
-
-    </div>
-
-</section>
-
-<section id="services">
-
-    <h2 class="section-title">My Services</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🎨 Website Design</h3>
-            <p>
-                Modern, clean and professional website designs
-                tailored to your brand and business goals.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>💻 Website Development</h3>
-            <p>
-                Fast, responsive and functional websites that
-                work smoothly across phones, tablets and computers.
-            </p>
-        </div>
-
-        <div class="card">
-           <h3>🔧 Website Maintenance & Support</h3>
-           <p>
-    Website updates, content changes, improvements and
-    ongoing technical support to keep your website running
-    smoothly.
-</p>
-        </div>
-<div class="card">
-    <h3>📢 Digital Promotion</h3>
-    <p>
-        Help businesses promote their products and services
-        online through engaging digital content and advertising.
-    </p>
-</div>
-    </div>
-
-</section>
-
-<section id="projects">
-
-    <h2 class="section-title">Featured Project</h2>
-
-    <div class="project">
-
-        <h3>🏠 OgaSavo Comfort Apartments</h3>
-
-       <p>
-    A modern, responsive website designed and developed for
-    OgaSavo Comfort Apartments to showcase the property,
-    provide essential information and make booking easier
-    for potential guests.
-</p>
-
-<p>
-    <strong>Key Features:</strong> Online booking form,
-    WhatsApp booking integration, guest reviews, Supabase
-    database integration, property gallery, interactive
-    photo viewer, light/dark mode and responsive design.
-</p>
 
         <a
-            href="https://bankz51.github.io/OgaSavo-comfort-apartments/"
+            href="https://wa.me/254759651705"
             target="_blank"
+            rel="noopener noreferrer"
             class="btn">
-            View Live Website
+
+            💬 Start a Conversation
+
         </a>
 
-    </div>
+    </section>
 
-</section>
 
-<section class="contact" id="contact">
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-    <h2 class="section-title">Let's Build Something Great</h2>
+    <footer>
 
-    <p>
-        Have a business that needs a professional website?
-        I'm available for website design and development projects.
-    </p>
+        <p>
+            ©️ 2026 Bankz. All rights reserved.
+        </p>
 
-    <p>
-        Let's discuss your idea and turn it into a website
-        that works for your business.
-    </p>
+        <p>
+            Web Design & Development
+        </p>
 
-    <a
-        href="https://wa.me/254759651705"
-        target="_blank"
-        class="btn">
-        💬 Start a Conversation
-    </a>
+    </footer>
 
-</section>
 
-<footer>
+    <!-- =========================
+         MENU SCRIPT
+    ========================= -->
 
-    <p>
-        © 2026 Bankz. All rights reserved.
-    </p>
+    <script>
 
-    <p>
-        Web Design & Development
-    </p>
+        function toggleMenu() {
 
-</footer>
-<script>
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-}
-</script>
+            const navLinks =
+                document.getElementById("navLinks");
+
+            navLinks.classList.toggle("active");
+
+        }
+
+
+        /* Close mobile menu after clicking a link */
+
+        document
+            .querySelectorAll("#navLinks a")
+            .forEach(function(link) {
+
+                link.addEventListener("click", function() {
+
+                    document
+                        .getElementById("navLinks")
+                        .classList.remove("active");
+
+                });
+
+            });
+
+    </script>
+
+
 </body>
+
 </html>
