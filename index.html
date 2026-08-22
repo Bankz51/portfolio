@@ -7,11 +7,14 @@
 
     <title>Bankz | Web Designer & Developer</title>
 
+    <meta name="description"
+        content="Bankz is a Web Designer & Developer creating modern, responsive and professional websites for businesses and individuals.">
+
     <style>
 
-        /* =========================
+        /* =====================================================
            RESET
-        ========================= */
+        ===================================================== */
 
         * {
             margin: 0;
@@ -20,114 +23,207 @@
             scroll-behavior: smooth;
         }
 
+        :root {
+            --navy: #071a2d;
+            --navy-dark: #040f1b;
+            --navy-card: #0b2945;
+            --gold: #d6a62a;
+            --gold-light: #f0c84b;
+            --white: #ffffff;
+            --text: #e8edf2;
+            --muted: #aebbc8;
+            --border: rgba(214, 166, 42, 0.25);
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #071a2d;
-            color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--navy);
+            color: var(--white);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
         }
 
 
-        /* =========================
+        /* =====================================================
            HEADER
-        ========================= */
+        ===================================================== */
 
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            position: relative;
             z-index: 1000;
+            background: rgba(4, 15, 27, 0.88);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(214, 166, 42, 0.12);
         }
 
         nav {
             width: 100%;
-            min-height: 72px;
-            padding: 0 6%;
+            max-width: 1250px;
+            min-height: 76px;
+            margin: auto;
+            padding: 0 25px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            background: linear-gradient(
-                90deg,
-                #000000 0%,
-                #000000 35%,
-                #071a2d 100%
-            );
         }
 
-
-        /* LOGO */
-
-        nav .logo {
+        .logo {
             display: flex;
             align-items: center;
-            flex-shrink: 0;
             text-decoration: none;
         }
 
-        nav .logo img {
-            height: 48px;
+        .logo img {
             width: auto;
+            height: 48px;
             display: block;
         }
 
-
-        /* NAVIGATION */
-
         nav ul {
             list-style: none;
-
             display: flex;
             align-items: center;
-
-            gap: 30px;
-            margin-left: auto;
+            gap: 32px;
         }
 
-        nav ul li {
-            list-style: none;
-        }
-
-        nav ul li a {
-            color: #ffffff;
+        nav ul a {
             text-decoration: none;
-
-            font-size: 15px;
+            color: var(--white);
+            font-size: 14px;
             font-weight: 600;
-
-            white-space: nowrap;
-
-            transition: color 0.3s ease;
+            transition: 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: #d6a62a;
+        nav ul a:hover {
+            color: var(--gold-light);
         }
 
+        .nav-cta {
+            padding: 10px 18px;
+            border: 1px solid var(--gold);
+            border-radius: 30px;
+            color: var(--gold) !important;
+        }
 
-        /* MOBILE MENU BUTTON */
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--navy) !important;
+        }
 
         .menu-toggle {
             display: none;
-
-            background: transparent;
             border: none;
-
-            color: #ffffff;
-
-            font-size: 28px;
-            line-height: 1;
-
+            background: transparent;
+            color: var(--white);
+            font-size: 29px;
             cursor: pointer;
         }
 
 
-        /* =========================
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        section {
+            padding: 110px 0;
+        }
+
+        .eyebrow {
+            color: var(--gold-light);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(36px, 5vw, 60px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+            color: var(--white);
+        }
+
+        .section-heading h2 span {
+            color: var(--gold);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 650px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 25px;
+
+            border-radius: 5px;
+
+            background: var(--gold);
+            color: var(--navy);
+
+            text-decoration: none;
+            font-weight: 700;
+
+            border: 1px solid var(--gold);
+
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(214, 166, 42, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255,255,255,0.25);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+
+        /* =====================================================
            HERO
-        ========================= */
+        ===================================================== */
 
         .hero {
-            min-height: 75vh;
+            min-height: 100vh;
+            padding-top: 150px;
+            padding-bottom: 80px;
 
             display: flex;
             align-items: center;
@@ -135,526 +231,567 @@
             position: relative;
             overflow: hidden;
 
-            background: linear-gradient(
-                110deg,
-                #071a2d 0%,
-                #071a2d 38%,
-                #16243a 55%,
-                #6f5a20 76%,
-                #d6a62a 100%
-            );
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(214, 166, 42, 0.16),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(14, 63, 104, 0.45),
+                    transparent 30%
+                ),
+                var(--navy-dark);
         }
 
-        .hero-content {
-            max-width: 750px;
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
 
-            padding: 40px 20px;
+            right: -200px;
+            bottom: -250px;
 
-            margin-left: 6%;
-
-            color: #ffffff;
+            border: 1px solid rgba(214,166,42,0.18);
+            box-shadow:
+                0 0 0 70px rgba(214,166,42,0.03),
+                0 0 0 140px rgba(214,166,42,0.02);
         }
 
-        .hero-label {
-            margin-bottom: 18px;
+        .hero-grid {
+            position: relative;
+            z-index: 2;
 
-            font-size: 14px;
-            letter-spacing: 2px;
-            font-weight: 700;
-
-            color: #f0c84b;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
         }
 
         .hero h1 {
-            margin: 0 0 22px;
+            max-width: 850px;
 
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.05;
-            font-weight: 800;
+            font-size: clamp(48px, 7vw, 86px);
+            line-height: 0.98;
+            letter-spacing: -3px;
 
-            color: #ffffff;
-
-            text-shadow:
-                0 3px 10px rgba(0, 0, 0, 0.45);
+            margin-bottom: 28px;
         }
 
         .hero h1 span {
-            color: #f0c84b;
+            color: var(--gold);
         }
 
         .hero-description {
             max-width: 650px;
 
-            margin-bottom: 32px;
-
+            color: var(--muted);
             font-size: 18px;
-            line-height: 1.7;
+            line-height: 1.8;
 
-            color: #f5f5f5;
-
-            text-shadow:
-                0 2px 6px rgba(0, 0, 0, 0.4);
+            margin-bottom: 35px;
         }
-
-        .hero-description strong {
-            color: #ffffff;
-        }
-
-
-        /* =========================
-           BUTTONS
-        ========================= */
 
         .hero-buttons {
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 13px;
         }
 
-        .btn,
-        .hero-outline-btn {
-            display: inline-block;
+        .hero-card {
+            min-height: 420px;
 
-            padding: 14px 28px;
-
-            background: #d6a62a;
-            color: #071a2d;
-
-            border: 2px solid #d6a62a;
+            border: 1px solid var(--border);
             border-radius: 8px;
 
-            text-decoration: none;
-            font-weight: 700;
+            background:
+                linear-gradient(
+                    rgba(7,26,45,0.72),
+                    rgba(4,15,27,0.9)
+                ),
+                url("apartment1.jpg") center/cover;
 
-            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding: 30px;
+
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
         }
 
-        .btn:hover,
-        .hero-outline-btn:hover {
-            background: #f0c84b;
-            color: #040f1b;
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 0 18px rgba(214, 166, 42, 0.45);
+        .hero-card-label {
+            color: var(--gold-light);
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
-
-        section {
-            padding: 80px 20px;
-
-            background: #071a2d;
-
-            color: #f5f5f5;
+        .hero-card h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
         }
 
-        .section-title {
-            text-align: center;
-
-            font-size: 36px;
-
-            margin-bottom: 40px;
-
-            color: #d6a62a;
+        .hero-card p {
+            color: var(--text);
+            font-size: 14px;
         }
 
 
-        /* =========================
-           ABOUT
-        ========================= */
+        /* =====================================================
+           INTRO / STATS
+        ===================================================== */
 
-        #about {
-            background: #071a2d;
+        .intro {
+            background: var(--navy);
         }
 
-        .about {
-            max-width: 850px;
-
-            margin: auto;
-
-            text-align: center;
-
-            font-size: 18px;
-
-            color: #f5f5f5;
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: end;
         }
 
-
-        /* =========================
-           SERVICES
-        ========================= */
-
-        #services {
-            background: #040f1b;
+        .intro h2 {
+            font-size: clamp(38px, 5vw, 65px);
+            line-height: 1;
         }
 
-        .cards {
-            max-width: 850px;
+        .intro h2 span {
+            color: var(--gold);
+        }
 
-            margin: 0 auto;
+        .intro-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        .stats {
+            margin-top: 60px;
 
             display: grid;
+            grid-template-columns: repeat(3, 1fr);
 
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-        .card {
-            width: 100%;
-            min-height: 230px;
+        .stat {
+            padding: 30px 20px;
+            border-right: 1px solid var(--border);
+        }
 
-            padding: 30px 25px;
+        .stat:last-child {
+            border-right: none;
+        }
 
-            background: #0b2945;
+        .stat strong {
+            display: block;
+            color: var(--gold);
+            font-size: 40px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
 
-            border:
-                1px solid rgba(214, 166, 42, 0.35);
+        .stat span {
+            color: var(--muted);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
 
-            border-radius: 18px;
 
-            text-align: center;
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects {
+            background: var(--navy-dark);
+        }
+
+        .project-list {
+            display: grid;
+            gap: 30px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            min-height: 400px;
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            background: #061525;
+        }
+
+        .project-image {
+            min-height: 400px;
+
+            background:
+                linear-gradient(
+                    rgba(7,26,45,0.12),
+                    rgba(7,26,45,0.12)
+                ),
+                url("apartment1.jpg") center/cover;
+
+            transition: transform 0.6s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.04);
+        }
+
+        .project-content {
+            padding: 50px;
 
             display: flex;
             flex-direction: column;
             justify-content: center;
-
-            color: #f5f5f5;
-
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.25);
-
-            animation:
-                floatingCard 4s ease-in-out infinite;
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
         }
 
-        .card:nth-child(2) {
-            animation-delay: 0.6s;
-        }
-
-        .card:nth-child(3) {
-            animation-delay: 1.2s;
-        }
-
-        .card:nth-child(4) {
-            animation-delay: 1.8s;
-        }
-
-        .card:hover {
-            transform:
-                translateY(-10px) scale(1.02);
-
-            box-shadow:
-                0 15px 35px rgba(0, 0, 0, 0.35);
-        }
-
-        .card h3 {
-            color: #d6a62a;
-
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: #e8edf2;
-        }
-
-        @keyframes floatingCard {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-
-        /* =========================
-           PROJECT
-        ========================= */
-
-        #projects {
-            background: #071a2d;
-        }
-
-        .project {
-            max-width: 850px;
-
-            margin: auto;
-
-            padding: 60px 40px;
-
-            border-radius: 20px;
-
-            text-align: center;
-
-            color: #ffffff;
-
-            background:
-                linear-gradient(
-                    rgba(4, 15, 27, 0.88),
-                    rgba(4, 15, 27, 0.88)
-                ),
-                url("apartment1.jpg")
-                center / cover no-repeat;
-
-            border:
-                1px solid rgba(214, 166, 42, 0.4);
-
-            box-shadow:
-                0 12px 35px rgba(0, 0, 0, 0.3);
-        }
-
-        .project h3 {
-            font-size: 30px;
-
-            margin-bottom: 18px;
-
-            color: #d6a62a;
-        }
-
-        .project p {
+        .project-number {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 2px;
             margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-            color: #f1f1f1;
+        .project-content h3 {
+            font-size: 34px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            color: var(--gold-light);
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .project-features li {
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .project-features li::before {
+            content: "→";
+            color: var(--gold);
+            margin-right: 9px;
         }
 
 
-        /* =========================
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+            background: var(--navy);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+
+            border: 1px solid var(--border);
+            background: var(--border);
+        }
+
+        .service {
+            padding: 38px;
+
+            background: var(--navy);
+
+            min-height: 230px;
+
+            transition: 0.3s ease;
+        }
+
+        .service:hover {
+            background: var(--navy-card);
+        }
+
+        .service-number {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .service h3 {
+            margin: 30px 0 12px;
+            font-size: 25px;
+        }
+
+        .service p {
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           PROCESS
+        ===================================================== */
+
+        .process {
+            background: var(--navy-dark);
+        }
+
+        .process-list {
+            border-top: 1px solid var(--border);
+        }
+
+        .process-item {
+            display: grid;
+            grid-template-columns: 100px 1fr 2fr;
+
+            gap: 25px;
+
+            padding: 30px 0;
+
+            border-bottom: 1px solid var(--border);
+
+            align-items: start;
+        }
+
+        .process-number {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .process-item h3 {
+            font-size: 24px;
+        }
+
+        .process-item p {
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           TESTIMONIAL / TRUST
+        ===================================================== */
+
+        .trust {
+            background: var(--navy);
+        }
+
+        .trust-box {
+            border: 1px solid var(--border);
+            padding: 55px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                rgba(11,41,69,0.75),
+                rgba(7,26,45,0.75)
+            );
+        }
+
+        .quote {
+            color: var(--gold);
+            font-size: 45px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .trust-box h2 {
+            max-width: 800px;
+            margin: auto auto 20px;
+
+            font-size: clamp(28px, 4vw, 45px);
+            line-height: 1.15;
+        }
+
+        .trust-box p {
+            max-width: 650px;
+            margin: auto;
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
            CONTACT
-        ========================= */
+        ===================================================== */
 
         .contact {
             background:
-                linear-gradient(
-                    135deg,
-                    #040f1b,
-                    #071a2d
-                );
-
-            color: #f5f5f5;
+                radial-gradient(
+                    circle at center,
+                    rgba(214,166,42,0.12),
+                    transparent 40%
+                ),
+                var(--navy-dark);
 
             text-align: center;
+            padding: 130px 0;
         }
 
-        .contact .section-title {
-            color: #d6a62a;
+        .contact h2 {
+            max-width: 900px;
+            margin: auto auto 25px;
+
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+        }
+
+        .contact h2 span {
+            color: var(--gold);
         }
 
         .contact p {
-            margin-bottom: 25px;
-
-            color: #e8edf2;
+            max-width: 620px;
+            margin: auto auto 32px;
+            color: var(--muted);
+            font-size: 17px;
         }
 
 
-        /* =========================
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
+            padding: 30px 0;
+
             background: #020910;
 
-            color: #dfe6ed;
-
-            text-align: center;
-
-            padding: 25px 20px;
-
-            border-top:
-                1px solid rgba(214, 166, 42, 0.3);
+            border-top: 1px solid var(--border);
         }
 
-        footer p:first-child {
-            color: #d6a62a;
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        footer p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: var(--gold);
         }
 
 
-        /* =========================
-           TABLET & PHONE
-        ========================= */
+        /* =====================================================
+           MOBILE
+        ===================================================== */
 
-        @media (max-width: 768px) {
-
-            /* HEADER */
+        @media (max-width: 850px) {
 
             nav {
-                min-height: 68px;
-
-                padding: 0 18px;
+                min-height: 70px;
             }
-
-            nav .logo img {
-                height: 42px;
-            }
-
-
-            /* MENU BUTTON */
 
             .menu-toggle {
-                display: flex;
-
-                align-items: center;
-                justify-content: center;
-
-                margin-left: auto;
-
-                padding: 5px;
-
-                background: transparent;
-                border: none;
-
-                color: #ffffff;
-
-                font-size: 28px;
-
-                cursor: pointer;
+                display: block;
             }
-
-
-            /* MOBILE NAVIGATION */
 
             nav ul {
                 display: none;
 
                 position: absolute;
+                top: 70px;
+                right: 20px;
 
-                top: 68px;
-                right: 18px;
-
-                width: 210px;
-
-                margin: 0;
-                padding: 8px 0;
+                width: 220px;
 
                 flex-direction: column;
-
                 align-items: stretch;
 
                 gap: 0;
 
-                background: #071a2d;
+                background: var(--navy-dark);
 
-                border:
-                    1px solid #d6a62a;
+                border: 1px solid var(--gold);
+                border-radius: 6px;
 
-                border-radius: 8px;
-
-                box-shadow:
-                    0 8px 25px
-                    rgba(0, 0, 0, 0.4);
+                overflow: hidden;
             }
 
             nav ul.active {
                 display: flex;
             }
 
-            nav ul li {
-                width: 100%;
-            }
-
             nav ul li a {
                 display: block;
-
-                width: 100%;
-
-                padding: 13px 18px;
-
-                color: #ffffff;
+                padding: 14px 18px;
             }
 
-
-            /* HERO */
-
-            .hero {
-                min-height: 75vh;
+            .nav-cta {
+                border: none;
+                border-radius: 0;
             }
 
-            .hero-content {
-                max-width: 100%;
-
-                margin-left: 0;
-
-                padding:
-                    60px 20px;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-
-                line-height: 1.1;
-            }
-
-            .hero-description {
-                font-size: 17px;
-
-                line-height: 1.6;
-            }
-
-
-            /* BUTTONS */
-
-            .hero-buttons {
-                gap: 12px;
-            }
-
-            .btn,
-            .hero-outline-btn {
-                padding:
-                    13px 20px;
-            }
-
-
-            /* TITLES */
-
-            .section-title {
-                font-size: 30px;
-            }
-
-
-            /* CARDS */
-
-            .cards {
+            .hero-grid,
+            .intro-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                min-height: 330px;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                min-height: 280px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-item {
+                grid-template-columns: 60px 1fr;
+            }
+
+            .process-item p {
+                grid-column: 2;
             }
         }
 
 
-        /* =========================
-           SMALL PHONES
-        ========================= */
+        @media (max-width: 600px) {
 
-        @media (max-width: 480px) {
-
-            nav {
-                padding:
-                    0 15px;
+            section {
+                padding: 80px 0;
             }
 
-            nav .logo img {
-                height: 38px;
+            .hero {
+                padding-top: 120px;
             }
 
             .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero-label {
-                font-size: 12px;
-
-                letter-spacing: 1.5px;
+                font-size: 47px;
+                letter-spacing: -2px;
             }
 
             .hero-description {
@@ -663,384 +800,683 @@
 
             .hero-buttons {
                 flex-direction: column;
-
                 align-items: stretch;
             }
 
-            .btn,
-            .hero-outline-btn {
+            .hero-buttons .btn {
                 width: 100%;
+            }
 
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .project-content {
+                padding: 30px 25px;
+            }
+
+            .project-content h3 {
+                font-size: 28px;
+            }
+
+            .service {
+                padding: 28px 25px;
+            }
+
+            .process-item {
+                grid-template-columns: 45px 1fr;
+                gap: 15px;
+            }
+
+            .process-item h3 {
+                font-size: 21px;
+            }
+
+            .trust-box {
+                padding: 35px 22px;
+            }
+
+            .contact {
+                padding: 100px 0;
+            }
+
+            .contact h2 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
                 text-align: center;
-            }
-
-            .project {
-                padding:
-                    45px 25px;
-            }
-
-            .project h3 {
-                font-size: 26px;
             }
         }
 
     </style>
-
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-    <header>
+<header>
 
-        <nav>
+    <nav>
 
-            <a href="#home" class="logo">
-                <img
-                    src="logo1.png"
-                    alt="Bankz Logo">
-            </a>
+        <a href="#home" class="logo">
+            <img src="Logo1.png" alt="Bankz Logo">
+        </a>
 
+        <button
+            class="menu-toggle"
+            onclick="toggleMenu()"
+            aria-label="Open navigation menu">
 
-            <button
-                class="menu-toggle"
-                onclick="toggleMenu()"
-                aria-label="Open navigation menu">
+            ☰
 
-                ☰
+        </button>
 
-            </button>
+        <ul id="navLinks">
 
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
-            <ul id="navLinks">
+            <li>
+                <a href="#about">About</a>
+            </li>
 
-                <li>
-                    <a href="#home">
-                        Home
-                    </a>
-                </li>
+            <li>
+                <a href="#projects">Work</a>
+            </li>
 
-                <li>
-                    <a href="#about">
-                        About
-                    </a>
-                </li>
+            <li>
+                <a href="#services">Services</a>
+            </li>
 
-                <li>
-                    <a href="#services">
-                        Services
-                    </a>
-                </li>
+            <li>
+                <a href="#process">Process</a>
+            </li>
 
-                <li>
-                    <a href="#projects">
-                        Projects
-                    </a>
-                </li>
+            <li>
+                <a href="#contact" class="nav-cta">
+                    Start a Project
+                </a>
+            </li>
 
-                <li>
-                    <a href="#contact">
-                        Contact
-                    </a>
-                </li>
+        </ul>
 
-            </ul>
+    </nav>
 
-        </nav>
-
-    </header>
+</header>
 
 
-    <!-- =========================
-         HERO
-    ========================= -->
 
-    <section
-        class="hero"
-        id="home">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-        <div class="hero-content">
+<section class="hero" id="home">
 
-            <p class="hero-label">
-                AVAILABLE FOR PROJECTS
+    <div class="container hero-grid">
+
+        <div>
+
+            <p class="eyebrow">
+                Web Designer & Developer
             </p>
 
-
             <h1>
-                I Build
-                <span>Websites</span>
-                <br>
-                That Grow Businesses.
+                I build
+                <span>websites</span>
+                that help businesses grow.
             </h1>
-
 
             <p class="hero-description">
 
                 I'm
-                <strong>
+                <strong style="color:#fff;">
                     Osanyintuyi Ayomide (Bankz)
                 </strong>,
 
                 a Web Designer & Developer creating
-                modern, responsive, and professional
-                websites that help businesses build
-                a strong online presence and grow.
+                modern, responsive and professional
+                websites that help businesses establish
+                a strong online presence.
 
             </p>
-
 
             <div class="hero-buttons">
 
-                <a
-                    href="#projects"
-                    class="btn">
-
-                    View My Work
-
+                <a href="#projects" class="btn">
+                    View My Work →
                 </a>
 
-
-                <a
-                    href="#contact"
-                    class="hero-outline-btn">
-
-                    Let's Work Together
-
+                <a href="#contact" class="btn btn-outline">
+                    Start a Project
                 </a>
 
             </div>
 
         </div>
 
-    </section>
 
+        <div class="hero-card">
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section id="about">
-
-        <h2 class="section-title">
-            About Me
-        </h2>
-
-
-        <div class="about">
-
-            <p>
-
-                I'm a Web Designer & Developer
-                focused on creating modern,
-                responsive and professional
-                websites for businesses
-                and individuals.
-
+            <p class="hero-card-label">
+                FEATURED WORK
             </p>
-
-
-            <p style="margin-top: 15px;">
-
-                I build websites that are easy
-                to use, work smoothly across
-                phones and computers, and help
-                businesses establish a strong
-                online presence, connect with
-                customers and grow.
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         SERVICES
-    ========================= -->
-
-    <section id="services">
-
-        <h2 class="section-title">
-            My Services
-        </h2>
-
-
-        <div class="cards">
-
-
-            <div class="card">
-
-                <h3>
-                    🎨 Website Design
-                </h3>
-
-                <p>
-
-                    Modern, clean and professional
-                    website designs tailored to your
-                    brand and business goals.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    💻 Website Development
-                </h3>
-
-                <p>
-
-                    Fast, responsive and functional
-                    websites that work smoothly across
-                    phones, tablets and computers.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    🔧 Website Maintenance & Support
-                </h3>
-
-                <p>
-
-                    Website updates, content changes,
-                    improvements and ongoing technical
-                    support to keep your website
-                    running smoothly.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    📢 Digital Promotion
-                </h3>
-
-                <p>
-
-                    Help businesses promote their
-                    products and services online
-                    through engaging digital content
-                    and advertising.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PROJECT
-    ========================= -->
-
-    <section id="projects">
-
-        <h2 class="section-title">
-            Featured Project
-        </h2>
-
-
-        <div class="project">
 
             <h3>
-                🏠 OgaSavo Comfort Apartments
+                OgaSavo Comfort Apartments
             </h3>
 
-
             <p>
-
-                A modern, responsive website designed
-                and developed for OgaSavo Comfort
-                Apartments to showcase the property,
-                provide essential information and make
-                booking easier for potential guests.
-
+                Website design, development,
+                booking system and digital experience.
             </p>
-
-
-            <p>
-
-                <strong>
-                    Key Features:
-                </strong>
-
-                Online booking form,
-                WhatsApp booking integration,
-                guest reviews, Supabase database
-                integration, property gallery,
-                interactive photo viewer,
-                light/dark mode and responsive design.
-
-            </p>
-
-
-            <a
-                href="https://bankz51.github.io/OgaSavo-comfort-apartments/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn">
-
-                View Live Website
-
-            </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
 
-    <section
-        class="contact"
-        id="contact">
+<!-- =====================================================
+     ABOUT / INTRO
+===================================================== -->
 
-        <h2 class="section-title">
-            Let's Build Something Great
+<section class="intro" id="about">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div>
+
+                <p class="eyebrow">
+                    About Bankz
+                </p>
+
+                <h2>
+                    Building digital
+                    <span>experiences</span>
+                    that work.
+                </h2>
+
+            </div>
+
+
+            <div class="intro-text">
+
+                <p>
+                    I'm a Web Designer & Developer
+                    focused on creating modern,
+                    responsive and professional
+                    websites for businesses and
+                    individuals.
+                </p>
+
+                <p>
+                    My goal isn't just to make a website
+                    look good. I build websites that are
+                    easy to use, work across phones and
+                    computers, and help businesses present
+                    themselves professionally online.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>01</strong>
+                <span>Featured Project</span>
+            </div>
+
+            <div class="stat">
+                <strong>100%</strong>
+                <span>Responsive Design</span>
+            </div>
+
+            <div class="stat">
+                <strong>24/7</strong>
+                <span>Online Presence</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                Selected Work
+            </p>
+
+            <h2>
+                A project I'm
+                <span>proud of.</span>
+            </h2>
+
+            <p>
+                Here's one of the websites I've designed
+                and developed from the ground up.
+            </p>
+
+        </div>
+
+
+        <div class="project-list">
+
+            <article class="project-card">
+
+                <div class="project-image"></div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        01 / WEBSITE PROJECT
+                    </div>
+
+                    <h3>
+                        OgaSavo Comfort Apartments
+                    </h3>
+
+                    <p class="project-tag">
+                        Hospitality · Website Design · Development
+                    </p>
+
+                    <p>
+                        A modern responsive website created
+                        to showcase the property, provide
+                        essential information and make booking
+                        easier for potential guests.
+                    </p>
+
+                    <ul class="project-features">
+
+                        <li>
+                            Online booking form
+                        </li>
+
+                        <li>
+                            WhatsApp booking integration
+                        </li>
+
+                        <li>
+                            Guest reviews
+                        </li>
+
+                        <li>
+                            Supabase database integration
+                        </li>
+
+                        <li>
+                            Property gallery & responsive design
+                        </li>
+
+                    </ul>
+
+                    <div>
+
+                        <a
+                            href="https://bankz51.github.io/OgaSavo-comfort-apartments/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn">
+
+                            View Live Website ↗
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                What I Do
+            </p>
+
+            <h2>
+                Services built around
+                <span>your business.</span>
+            </h2>
+
+            <p>
+                From the first design idea to the finished
+                website, I focus on creating digital
+                experiences that look professional and
+                work properly.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service">
+
+                <span class="service-number">
+                    01
+                </span>
+
+                <h3>
+                    Website Design
+                </h3>
+
+                <p>
+                    Modern, clean and professional website
+                    designs tailored to your brand,
+                    audience and business goals.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <span class="service-number">
+                    02
+                </span>
+
+                <h3>
+                    Website Development
+                </h3>
+
+                <p>
+                    Responsive and functional websites
+                    designed to work smoothly across
+                    phones, tablets and computers.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <span class="service-number">
+                    03
+                </span>
+
+                <h3>
+                    Website Maintenance
+                </h3>
+
+                <p>
+                    Website updates, content changes,
+                    improvements and technical support
+                    to keep your website running smoothly.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <span class="service-number">
+                    04
+                </span>
+
+                <h3>
+                    Digital Promotion
+                </h3>
+
+                <p>
+                    Support with online promotion,
+                    digital content and advertising
+                    strategies that help businesses
+                    reach more people.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="process" id="process">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                How I Work
+            </p>
+
+            <h2>
+                A simple process.
+                <span>Good results.</span>
+            </h2>
+
+            <p>
+                I keep the process straightforward so
+                you always know what we're working on.
+            </p>
+
+        </div>
+
+
+        <div class="process-list">
+
+
+            <div class="process-item">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    We discuss your business, goals,
+                    audience and what you want the
+                    website to achieve.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Design
+                </h3>
+
+                <p>
+                    I create the visual direction,
+                    structure and user experience
+                    for your website.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Develop
+                </h3>
+
+                <p>
+                    I turn the approved design into
+                    a responsive and functional website.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Refine
+                </h3>
+
+                <p>
+                    We review the website, make
+                    improvements and ensure everything
+                    works properly.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="process-number">
+                    05
+                </div>
+
+                <h3>
+                    Launch
+                </h3>
+
+                <p>
+                    Your finished website goes live
+                    and is ready for customers to see.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUST
+===================================================== -->
+
+<section class="trust">
+
+    <div class="container">
+
+        <div class="trust-box">
+
+            <div class="quote">
+                “
+            </div>
+
+            <h2>
+                Your website is often
+                the first impression
+                customers get of your business.
+            </h2>
+
+            <p>
+                I build websites designed to make
+                that first impression count.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            Available for Projects
+        </p>
+
+        <h2>
+            Ready to build
+            <span>something real?</span>
         </h2>
 
-
         <p>
-
-            Have a business that needs
-            a professional website?
-
-            I'm available for website design
-            and development projects.
-
+            Have a business that needs a professional
+            website? Let's discuss your idea and turn
+            it into a website that works for your business.
         </p>
-
-
-        <p>
-
-            Let's discuss your idea and turn
-            it into a website that works
-            for your business.
-
-        </p>
-
 
         <a
             href="https://wa.me/254759651705"
@@ -1048,68 +1484,74 @@
             rel="noopener noreferrer"
             class="btn">
 
-            💬 Start a Conversation
+            Start a Conversation →
 
         </a>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
 
-    <footer>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-inner">
 
         <p>
-            ©️ 2026 Bankz. All rights reserved.
+            © 2026 <strong>Bankz</strong>.
+            All rights reserved.
         </p>
 
         <p>
             Web Design & Development
         </p>
 
-    </footer>
+    </div>
+
+</footer>
 
 
-    <!-- =========================
-         MOBILE MENU SCRIPT
-    ========================= -->
 
-    <script>
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-        function toggleMenu() {
+<script>
 
-            const navLinks =
-                document.getElementById("navLinks");
+    function toggleMenu() {
 
-            navLinks.classList.toggle("active");
+        const navLinks =
+            document.getElementById("navLinks");
 
-        }
+        navLinks.classList.toggle("active");
+
+    }
 
 
-        /* Close menu after clicking a link */
+    document
+        .querySelectorAll("#navLinks a")
+        .forEach(function(link) {
 
-        document
-            .querySelectorAll("#navLinks a")
-            .forEach(function(link) {
+            link.addEventListener(
+                "click",
+                function() {
 
-                link.addEventListener(
-                    "click",
-                    function() {
+                    document
+                        .getElementById("navLinks")
+                        .classList.remove("active");
 
-                        document
-                            .getElementById("navLinks")
-                            .classList.remove("active");
+                }
+            );
 
-                    }
-                );
+        });
 
-            });
-
-    </script>
+</script>
 
 
 </body>
-
 </html>
