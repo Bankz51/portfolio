@@ -7,28 +7,51 @@
     <title>Bankz | Web Designer & Developer</title>
 
     <style>
-        .nav {
+       /* =========================
+   NAVIGATION HEADER
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 72px;
+    padding: 0 6%;
+    box-sizing: border-box;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 6%;
+
     background: linear-gradient(
         90deg,
         #000000 0%,
         #000000 35%,
         #071a2d 100%
     );
+
+    position: relative;
+    z-index: 1000;
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .logo img {
-    height: 50px;
+    height: 48px;
     width: auto;
     display: block;
 }
 
+/* NAVIGATION LINKS */
+
 .nav-links {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 30px;
     margin-left: auto;
 }
@@ -36,7 +59,9 @@
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
+    font-size: 15px;
     font-weight: 500;
+    white-space: nowrap;
     transition: 0.3s ease;
 }
 
@@ -44,44 +69,69 @@
     color: #d6a62a;
 }
 
+/* MENU BUTTON */
+
 .menu-toggle {
     display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 28px;
-    cursor: pointer;
 }
 
-/* Mobile */
+
+/* =========================
+   PHONE
+========================= */
+
 @media (max-width: 768px) {
 
-    .nav {
-        padding: 14px 5%;
+    .navbar {
+        min-height: 68px;
+        padding: 0 18px;
     }
 
     .logo img {
-        height: 45px;
+        height: 42px;
     }
 
+    /* Show hamburger */
     .menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         margin-left: auto;
+        padding: 6px;
+
+        background: transparent;
+        border: none;
+
+        color: #ffffff;
+        font-size: 28px;
+        line-height: 1;
+
+        cursor: pointer;
     }
 
+    /* Hide links until toggle is clicked */
     .nav-links {
         display: none;
+
         position: absolute;
-        top: 75px;
-        right: 5%;
-        width: 200px;
+        top: 68px;
+        right: 18px;
+
+        width: 210px;
+
+        margin: 0;
+        padding: 8px 0;
+
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 0;
-        padding: 15px;
+
         background: #071a2d;
         border: 1px solid #d6a62a;
         border-radius: 8px;
+
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
 
     .nav-links.active {
@@ -89,8 +139,10 @@
     }
 
     .nav-links a {
+        display: block;
         width: 100%;
-        padding: 12px 10px;
+        padding: 13px 18px;
+        box-sizing: border-box;
     }
 }
       .hero-outline-btn {
